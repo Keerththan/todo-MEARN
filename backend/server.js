@@ -2,9 +2,11 @@
 const express= require('express');
 const app =express();
 const mongoose=require('mongoose')
+const cors= require('cors')
 
 //middleware
 app.use(express.json())
+app.use(cors())
 
 
 //let todos=[];
@@ -117,7 +119,7 @@ app.delete("/todos/:id",async (req,res)=>{
 
 })
 
-const port = 3000;
+const port = 8000;
 app.listen(port,()=>{
 
     console.log(`server is running on port ${port}`)
